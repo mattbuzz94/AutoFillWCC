@@ -60,7 +60,7 @@
         text1+= 'Sugestão aceita: \n\n';
         text1+= 'Status: \n\n';
         text1+= 'Data Prevista: \n\n';
-        text1+= 'Comentários: \n\n';
+        text1+= 'Comentários : \n\n';
         comentario_interno.value = text1;
 
     }
