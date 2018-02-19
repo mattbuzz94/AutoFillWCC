@@ -23,7 +23,7 @@
     if(solucao_cliente_text_area !== null){
         var text = solucao_cliente_text_area.value;
         var data = new Date().toLocaleDateString();
-        if(isEmptyString(text)&& tipo_chamado !== 'Consultoria Online'){
+        if(isEmptyString(text)&& tipo_chamado.value == '73'){//Problema
             text=  'Matheus Maciel '+data;
             text+= '\n\n';
             text+= 'Causa-Raiz: \n\n';
@@ -32,7 +32,7 @@
 
             solucao_cliente_text_area.value = text;
         }
-        if(isEmptyString(text) && tipo_chamado !== 'Consultoria Online'){
+        if(isEmptyString(text) && tipo_chamado.value == '33'){//Consultoria Online
             text=  'Matheus Maciel '+data;
             text+= '\n\n';
             text+= 'Necessidade do Cliente: \n\n';
@@ -40,7 +40,7 @@
             text+= 'Solução Definitiva: \n';
             solucao_cliente_text_area.value = text;
         }
-        if (isEmptyString(text) && tipo_chamado !== 'Dúvida'){
+        if (isEmptyString(text) && tipo_chamado.value == '72'){//Dùvida
             text=  'Matheus Maciel '+data;
             text+= '\n\n';
             text+= 'Necessidade do Cliente: \n\n';
@@ -67,7 +67,6 @@
     function isEmptyString(string){
         if(!string || string.length === 0 || !string.trim()){
             console.log('esta vazio ou somente contem espaço');
-
             return true;
         }
     }XMLDocument
