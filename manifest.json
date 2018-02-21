@@ -1,8 +1,8 @@
 {
     "manifest_version": 2,
 
-    "name": "TR ENV SWITCHER",
-    "version": "0.1",
+    "name": "AutoFill WCC",
+    "version": "1.0",
 
     "description": "Ferramentas para ganhar produtividade no Suporte a Clientes",
 
@@ -19,7 +19,7 @@
             "16": "icons/icon_16x16.png",
             "32": "icons/icon_32x32.png"
         },
-        "default_title": "TR SUPPORT TOOLS"
+        "default_title": "AutoFill WCC"
     },
 
     "content_scripts": [{
