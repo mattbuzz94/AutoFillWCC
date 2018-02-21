@@ -1,5 +1,4 @@
 (function() {
-
     var p_environment = document.getElementById('p_environment');
     var solucao_cliente_text_area = document.getElementById('id_solucao_cliente'); 
     var tipo_chamado = document.getElementById('id_tipo_chamado');
@@ -49,26 +48,38 @@
         }
     }
     if(comentario_interno !== null){
-        var text1 = comentario_interno.value;
-        text1+= '#RCA \n\n';
-        text1+= 'Item: \n\n';
-        text1+= 'Descrição: \n\n';
-        text1+= 'Motivo: \n\n';
-        text1+= 'Sugestão: \n\n';
-        text1+= 'Tipo Sugestão: \n\n';
-        text1+= 'Mês referência: \n\n';
-        text1+= 'Sugestão aceita: \n\n';
-        text1+= 'Status: \n\n';
-        text1+= 'Data Prevista: \n\n';
-        text1+= 'Comentários : \n\n';
-        comentario_interno.value = text1;
+        var comentario = comentario_interno.value;
 
+        if (isEmptyString(text1)){
+        text1 = fillRCA();
+        comentario_interno.value = text1;
+        }
+
+        else if (text1.indexOf("#RCA") < 0){// Retorna -1 se não houver a #RCA nos comentários
+        text1 = fillRCA();
+        comentario+= '\n'.concat(text1);
+        comentario_interno.value = text1;
+        }
     }
+    function fillRCA() {
+        var tagsRCA = "";
+        
+        tagsRCA+= '#RCA \n\n';
+        tagsRCA+= 'Item: \n\n';
+        tagsRCA+= 'Descrição: \n\n';
+        tagsRCA+= 'Motivo: \n\n';
+        tagsRCA+= 'Sugestão: \n\n';
+        tagsRCA+= 'Tipo Sugestão: \n\n';
+        tagsRCA+= 'Mês referência: \n\n';        
+        tagsRCA+= 'Comentários : \n\n';
+
+        return tagsRCA;
+    }  
+    
     function isEmptyString(string){
         if(!string || string.length === 0 || !string.trim()){
             console.log('esta vazio ou somente contem espaço');
             return true;
         }
     }XMLDocument
-
 })();
