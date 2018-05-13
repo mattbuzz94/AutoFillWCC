@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Configurações do AutoFill WCC</title>
+        <meta charset="utf-8">
+        <link href="icon-16.png" rel="icon" type="image/png" sizes="16x16"/>
+        <link href="icon-32.png" rel="icon" type="image/png" sizes="32x32"/>
+        <link rel="stylesheet" href="chrome_shared.css"/>
+        <style>
+            /* Custom Style */
+            body>.main-container{max-width:750px;margin:50px 0 50px 10%}
+            .container{max-width:750px;margin:0 0 0 10%}
+            header>h1{font-size:40px}
+            header>h1>span{margin-top:15px;display:block;font-size:18px}
+            footer{padding-bottom:30px}
+            button{vertical-align:bottom;cursor:pointer}
+            button>img{margin:2px 0 -2px 0;opacity:0.65}
+            button:hover img{opacity:.85}
+            #context-menu-items>div{margin-top:10px}
+            .title{width:20%}
+            .info{width:50%}
+            .alert-container{width:220px;position:fixed;right:15px;bottom:15px;vertical-align:bottom}
+            .alert{width:200px;margin-top:15px;padding:15px 10px;border:1px solid rgb(48, 57, 66);border-radius:4px;vertical-align:bottom}
+            .alert-warning{border-color:#D49853}
+            .alert-error{border-color:#B94A48}
+            .mr_top_10x{margin-top:10px}
+            .fr{float:right}
+            .disp_none{display:none}
+            .disp_inl_blk{display:inline-block}
+            /* For Responsiveness */
+            @media (min-width:32.5em) and (max-width: 61.250em) {
+                body>.main-container,.container{max-width:55em;margin:40px auto}
+            }
+            @media (min-width: 32.5em) and (max-width: 38.688em) {
+                body>.main-container,.container{max-width:34em;margin:30px auto}
+            }
+            @media (max-width: 32.438em) {
+                body>.main-container,.container{max-width:32em;margin:20px auto}
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main-container">
+            <header>
+                <h1>AutoFill WCC<span>Configurações do AutoFill WCC</span></h1>
+            </header>
+            <h3>Adicione o texto que será preenchido em cada campo da aba "Suporte" no WCC.</h3>
+            <hr/>
+            <div><input type="text" value="Name" class="title" readonly/>&nbsp;&nbsp;<input type="text" value="Ram Swaroop" class="info" readonly/>&nbsp;&nbsp;<button><img src="delete.png"/></button>&nbsp;<button><img src="add.png"/></button>&nbsp;&nbsp;<small>(example)</small></div>
+            <div id="context-menu-items">
+                <!--<div><input type="text" placeholder="Title..." class="title"/>&nbsp;&nbsp;<input type="text" placeholder="Your Information..." class="info"/>&nbsp;&nbsp;<button class="delete_item"><img src="delete.png"/></button>&nbsp;<button class="add_item"><img src="add.png"/></button></div>-->
+            </div>
+            <div class="mr_top_10x">
+                <button id="save"><strong>Salvar</strong></button> <br/><br/>
+                    <h2>Configurações</h2>
+                <hr/>
+                <div class="checkbox disp_inl_blk">
+                    <label>
+                        <input type="checkbox" id="do-append"/><span></span>Append information in fields instead of replacing.
+                    </label>
+                </div>
+                <div class="fr">
+                    <button id="import"><strong>Importar</strong></button>
+                    <input type="file" id="import-file" name="import-file" class="disp_none"/>
+                    <button id="export"><strong>Exportar</strong></button>
+                </div>
+            </div>
+        </div>
+        <div class="alert-container"></div>
+        <footer class="container">
+            <hr/>
+            &COPY;Desenvolvido por <a href="https://thehub.thomsonreuters.com/people/6030486">Matheus Maciel</a>.
+        </footer>
+        <script src="jquery-3.2.1.min.js"></script>
+        <script src="FileSaver.js"></script>
+        <script src="options.js"></script>
+    </body>
+</html>

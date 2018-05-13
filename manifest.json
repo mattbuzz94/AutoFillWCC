@@ -4,7 +4,7 @@
     "name": "AutoFill WCC",
     "version": "1.0",
 
-    "description": "Ferramentas para ganhar produtividade no Suporte a Clientes",
+    "description": "Automatização de rotinas no WCC.",
 
     "icons": {
         "16": "icons/icon_16x16.png",
@@ -34,6 +34,8 @@
     "web_accessible_resources": [
         "*"
     ],
+    
+   "options_page": "options.html",
 
     "permissions": [
         "activeTab",
@@ -41,6 +43,7 @@
         "background",
         "notifications",
         "storage",
+        
         "https://secure.softcomex.com.br/pls/callcenter/tela_ctrl_suporte?*"
     ]
 }
